@@ -192,7 +192,7 @@ local function update()
     if getgenv().settings.textUpdateToggle and getgenv().settings.customBoothText then
         text = string.gsub(getgenv().settings.customBoothText, "$C", current)
         text = string.gsub (text, "$G", goal)
-        boothText = tostring('<font color="'.. getgenv().settings.hexBox.. '">'.. text.. '</font>')
+        boothText = tostring(text)
         --Updates the booth text
         local myBooth = Players.LocalPlayer.PlayerGui.MapUIContainer.MapUI.BoothUI:FindFirstChild(tostring("BoothUI".. unclaimed[1]))
         if myBooth.Sign.TextLabel.Text ~= boothText then
@@ -209,7 +209,7 @@ local function update()
 
         text = string.gsub(getgenv().settings.signText, "$C", current)
         text = string.gsub (text, "$G", goal)
-        signText = tostring('<font color="'.. getgenv().settings.signHexBox.. '">'.. text.. '</font>')
+        signText = tostring(text)
 
         if currentSign ~= signText then
             if string.find(currentSign, "# #") or string.find(currentSign, "##") then
